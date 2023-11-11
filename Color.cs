@@ -1,6 +1,6 @@
 ﻿namespace CheeseyUI;
 
-public class Color : CheesyUtils.Color
+public class Color : CheeseyUtils.Color
 {
     public Color(byte r, byte g, byte b, byte a) : base(r, g, b, a)
     {

@@ -6,6 +6,13 @@ using SFML.Window;
 
 public class App
 {
+    public static class AppInfo
+    {
+        public static string Name { get; set; } = string.Empty;
+        public static string Author { get; set; } = string.Empty;
+        public static Version Version { get; set; } = new(0, 0, 0, 0);
+    }
+
     public static App? Instance { get; }
     public readonly Element RootElement = new(new(0, 0), new(0, 0), null, true);
     private readonly RenderWindow _window;
