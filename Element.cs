@@ -2,23 +2,48 @@
 
 using SFML.Graphics;
 using SFML.System;
+using SFML.Window;
 
-public class Element(Vector2f position, Vector2f size, bool active = true)
+public class Element
 {
     public Element? Parent { get; set; }
 
     public List<Element> Children { get; set; } = [];
 
-    public Vector2f Position { get; set; } = position;
+    public Vector2f Position { get; set; }
 
-    public Vector2f Size { get; set; } = size;
+    public Vector2f Size { get; set; }
 
-    public bool IsActive { get; set; } = active;
+    public bool IsActive { get; set; }
 
-    private readonly RectangleShape? _bg;
+    public Color BgColor
+    {
+        get => _bg.FillColor;
+        set => _bg.FillColor = value;
+    }
+
+    private readonly RectangleShape _bg;
+
+    public Element(Vector2f position, Vector2f size, Element? parent = null, bool active = true, Color? bgColor = null)
+    {
+        if (parent != null)
+        {
+            SetParent(parent);
+        }
+
+        Position = position;
+        Size = size;
+        IsActive = active;
+
+        _bg = new RectangleShape
+        {
+            FillColor = bgColor ?? Color.DefaultColors.Transparent,
+        };
+    }
 
     public void SetParent(Element parent)
     {
+        Parent?.RemoveChild(this);
         Parent = parent;
         parent.Children.Add(this);
     }
@@ -39,7 +64,9 @@ public class Element(Vector2f position, Vector2f size, bool active = true)
     {
         if (IsActive)
         {
-            _bg?.Draw(target, RenderStates.Default);
+            _bg.Position = Position;
+            _bg.Size = Size;
+            _bg.Draw(target, RenderStates.Default);
             foreach (var child in Children)
             {
                 child.Draw(target);
