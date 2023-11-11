@@ -14,7 +14,7 @@ public class App
     }
 
     public static App? Instance { get; }
-    public readonly Element RootElement = new(new(0, 0), new(0, 0), null, true);
+    public readonly Element RootElement = new(null, new(0, 0), new(0, 0), bgColor: Colors.DarkGray);
     private readonly RenderWindow _window;
 
     public App(AppSettings settings)
@@ -36,7 +36,7 @@ public class App
 
         _window.MouseButtonPressed += (sender, args) =>
         {
-            Input.OnMouseClicked.Invoke(this, args);
+            Input.HandleMouseClick(args);
         };
 
         _window.MouseMoved += (sender, args) =>

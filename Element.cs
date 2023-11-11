@@ -23,7 +23,7 @@ public class Element
 
     private readonly RectangleShape _bg;
 
-    public Element(Vector2f position, Vector2f size, Element? parent = null, bool active = true, Color? bgColor = null)
+    public Element(Element? parent, Vector2f position, Vector2f size, bool active = true, Color? bgColor = null)
     {
         if (parent != null)
         {
@@ -36,7 +36,7 @@ public class Element
 
         _bg = new RectangleShape
         {
-            FillColor = bgColor ?? Color.DefaultColors.Transparent,
+            FillColor = bgColor ?? Colors.Transparent,
         };
     }
 

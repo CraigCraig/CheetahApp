@@ -5,12 +5,11 @@ using SFML.System;
 
 public class Button : Element
 {
-    public Button(Vector2f position, Vector2f size, string text, Action onClick, Color? color = null) : base(position, size)
+    public Button(Element? parent, Vector2f position, Vector2f size, string text, Action onClick, Color? color = null) : base(parent, position, size)
     {
-        Label = new(position, size, text);
+        Label = new(this, position, size, text);
         Children.Add(Label);
         OnClick = onClick;
-        BgColor = Color.DefaultColors.Blue;
     }
 
     public Label Label { get; set; }
@@ -27,11 +26,11 @@ public class Button : Element
         {
             if (IsMouseOver())
             {
-                BgColor = Color.DefaultColors.Cyan;
+                BgColor = Colors.LightBlue;
             }
             else
             {
-                BgColor = Color.DefaultColors.Blue;
+                BgColor = Colors.Blue;
             }
         }
         base.Draw(target);
