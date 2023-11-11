@@ -73,7 +73,7 @@ public class Element
         }
     }
 
-    internal bool IsMouseOver()
+    public bool IsMouseOver()
     {
         var mousePos = Input.MousePosition;
         var pos = Position;
