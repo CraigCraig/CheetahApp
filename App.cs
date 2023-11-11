@@ -88,12 +88,3 @@ public static class Input
         }
     }
 }
-
-public static class ElementExtensions
-{
-    public static bool IsMouseOver(this Element element)
-    {
-        return element.Position.X <= Input.MousePosition.X && element.Position.X + element.Size.X >= Input.MousePosition.X &&
-               element.Position.Y <= Input.MousePosition.Y && element.Position.Y + element.Size.Y >= Input.MousePosition.Y;
-    }
-}

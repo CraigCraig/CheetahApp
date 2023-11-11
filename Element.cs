@@ -2,7 +2,6 @@
 
 using SFML.Graphics;
 using SFML.System;
-using SFML.Window;
 
 public class Element
 {
@@ -72,5 +71,14 @@ public class Element
                 child.Draw(target);
             }
         }
+    }
+
+    internal bool IsMouseOver()
+    {
+        var mousePos = Input.MousePosition;
+        var pos = Position;
+        var size = Size;
+
+        return mousePos.X >= pos.X && mousePos.X <= pos.X + size.X && mousePos.Y >= pos.Y && mousePos.Y <= pos.Y + size.Y;
     }
 }
