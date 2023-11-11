@@ -36,13 +36,4 @@ public class Button : Element
         }
         base.Draw(target);
     }
-
-    private bool IsMouseOver()
-    {
-        var mousePos = Input.MousePosition;
-        var pos = Position;
-        var size = Size;
-
-        return mousePos.X >= pos.X && mousePos.X <= pos.X + size.X && mousePos.Y >= pos.Y && mousePos.Y <= pos.Y + size.Y;
-    }
 }
