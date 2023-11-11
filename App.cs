@@ -6,9 +6,9 @@ public class App
 {
     private readonly Window _window;
 
-    public App()
+    public App(AppSettings settings)
     {
-        _window = new Window(new VideoMode(800, 600), "CheeseyUI");
+        _window = new Window(new VideoMode(settings.Width, settings.Height), settings.Title);
 
         _window.Closed += (sender, args) => _window.Close();
 
