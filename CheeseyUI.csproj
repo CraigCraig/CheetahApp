@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove=".git" />
+    <None Remove=".gitignore" />
+    <None Remove="LICENSE" />
+    <None Remove="README.md" />
+  </ItemGroup>
+
+</Project>
