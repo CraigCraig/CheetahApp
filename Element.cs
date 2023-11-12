@@ -1,7 +1,9 @@
 ﻿namespace CheeseyUI;
 
+using CheeseyUtils;
 using SFML.Graphics;
 using SFML.System;
+using Color = CheeseyUtils.Color;
 
 public class Element
 {
@@ -17,8 +19,8 @@ public class Element
 
     public Color BgColor
     {
-        get => _bg.FillColor;
-        set => _bg.FillColor = value;
+        get => _bg.FillColor.ToCheeseyColor();
+        set => _bg.FillColor = value.ToSFMLColor();
     }
 
     private readonly RectangleShape _bg;
@@ -36,7 +38,7 @@ public class Element
 
         _bg = new RectangleShape
         {
-            FillColor = bgColor ?? Colors.Transparent,
+            FillColor = (bgColor ?? Colors.Transparent).ToSFMLColor(),
         };
     }
 

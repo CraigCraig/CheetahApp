@@ -1,7 +1,9 @@
 ﻿namespace CheeseyUI;
 
+using CheeseyUtils;
 using SFML.Graphics;
 using SFML.System;
+using Color = CheeseyUtils.Color;
 
 public class Button : Element
 {
@@ -33,11 +35,11 @@ public class Button : Element
         {
             if (IsMouseOver())
             {
-                BgColor = Colors.LightBlue;
+                BgColor = (Color) Colors.LightBlue;
             }
             else
             {
-                BgColor = Colors.Blue;
+                BgColor = (Color) Colors.Blue;
             }
         }
         base.Draw(target);

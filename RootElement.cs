@@ -1,5 +1,6 @@
 ﻿namespace CheeseyUI;
 
+using CheeseyUtils;
 using SFML.Graphics;
 using SFML.System;
 
