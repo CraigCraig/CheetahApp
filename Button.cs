@@ -5,7 +5,7 @@ using SFML.System;
 
 public class Button : Element
 {
-    public Button(Element? parent, Vector2f position, Vector2f size, string text, Action onClick, Color? color = null) : base(parent, position, size)
+    public Button(Element? parent, Vector2f position, Vector2f size, string text, Action? onClick = null, Color? color = null) : base(parent, position, size)
     {
         Label = new(this, position, size, text);
         Children.Add(Label);
@@ -13,11 +13,18 @@ public class Button : Element
     }
 
     public Label Label { get; set; }
-    public Action OnClick { get; set; }
+    public Action? OnClick { get; set; }
 
     internal void HandleClick()
     {
-        OnClick.Invoke();
+        try
+        {
+            OnClick?.Invoke();
+        }
+        catch (Exception e)
+        {
+            throw new Exception($"Error while handling click for button '{Label.Text.DisplayedString}': {e.Message}");
+        }
     }
 
     public override void Draw(RenderTarget target)
