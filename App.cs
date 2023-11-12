@@ -20,6 +20,8 @@ public class App
     {
         ConsoleInitializer.Initialize();
         Log.Info($"{Colors.White}{Name} v{Version} by {Author}");
+        Log.Info($"{Colors.White}CheeseyUI v{CheesyUI.Version}");
+        Log.Info($"{Colors.White}CheeseyUtils v{CheesyUtils.Version}");
         Instance = this;
         _window = new(new VideoMode(settings.Width, settings.Height), settings.Title);
         RootElement.Position = new Vector2f(0, 0);
