@@ -45,17 +45,7 @@ public class App
             _window.DispatchEvents();
             _window.Clear();
 
-            Input.MousePosition = Mouse.GetPosition(_window);
-            if (Mouse.IsButtonPressed(Mouse.Button.Left))
-            {
-                Input.HandleMouseClick();
-            }
-
-            if (Keyboard.IsKeyPressed(Keyboard.Key.Escape))
-            {
-                _window.Close();
-            }
-
+            Input.Update(_window);
             RootElement.Draw(_window);
 
             _window.Display();

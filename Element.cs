@@ -77,7 +77,7 @@ public class Element
 
     public bool IsMouseOver()
     {
-        var mousePos = Input.MousePosition;
+        var mousePos = Mouse.Position;
         var pos = Position;
         var size = Size;
 
