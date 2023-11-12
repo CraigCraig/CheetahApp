@@ -19,7 +19,7 @@ public class App
     public App(AppSettings settings)
     {
         ConsoleInitializer.Initialize();
-        Log.WriteLine($"{Name} v{Version} by {Author}");
+        Log.Info($"{Colors.White}{Name} v{Version} by {Author}");
         Instance = this;
         _window = new(new VideoMode(settings.Width, settings.Height), settings.Title);
         RootElement.Position = new Vector2f(0, 0);

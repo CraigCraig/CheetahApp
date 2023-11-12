@@ -25,7 +25,8 @@ public class Button : Element
         }
         catch (Exception e)
         {
-            throw new Exception($"Error while handling click for button '{Label.Text.DisplayedString}': {e.Message}");
+            Log.Error(e);
+            //throw new Exception($"Error while handling click for button '{Label.Text.DisplayedString}': {e.Message}");
         }
     }
 
