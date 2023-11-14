@@ -20,6 +20,3 @@ If you would like to report a bug or request a feature, please create an issue.<
 - [ ] Layouts
     - [ ] StackPanel
     - [ ] Grid
-- [ ] Plugin Support
-    - [ ] Plugin Loading
-    - [ ] Plugin Management
