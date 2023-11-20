@@ -1,48 +1,48 @@
-﻿namespace CheeseyUI;
+﻿namespace CheetahApp;
 
-using CheeseyUtils;
+using System;
 using SFML.Graphics;
 using SFML.System;
-using Color = CheeseyUtils.Color;
+using Color = CheetahUtils.Color;
 
 public class Button : Element
 {
-    public Button(Element? parent, Vector2f position, Vector2f size, string text, Action? onClick = null, Color? color = null) : base(parent, position, size)
-    {
-        Label = new(this, position, size, text);
-        Children.Add(Label);
-        OnClick = onClick;
-    }
+	public Button(Element? parent, Vector2f position, Vector2f size, string text, Action? onClick = null, Color? color = null) : base(parent, position, size)
+	{
+		Label = new(this, position, size, text);
+		Children.Add(Label);
+		OnClick = onClick;
+	}
 
-    public Label Label { get; set; }
-    public Action? OnClick { get; set; }
+	public Label Label { get; set; }
+	public Action? OnClick { get; set; }
 
-    internal void HandleClick()
-    {
-        try
-        {
-            OnClick?.Invoke();
-        }
-        catch (Exception e)
-        {
-            Log.Error(e);
-            //throw new Exception($"Error while handling click for button '{Label.Text.DisplayedString}': {e.Message}");
-        }
-    }
+	internal void HandleClick()
+	{
+		try
+		{
+			OnClick?.Invoke();
+		}
+		catch (Exception e)
+		{
+			Log.WriteLine(e);
+			//throw new Exception($"Error while handling click for button '{Label.Text.DisplayedString}': {e.Message}");
+		}
+	}
 
-    public override void Draw(RenderTarget target)
-    {
-        if (IsActive)
-        {
-            if (IsMouseOver())
-            {
-                BgColor = (Color) Colors.LightBlue;
-            }
-            else
-            {
-                BgColor = (Color) Colors.Blue;
-            }
-        }
-        base.Draw(target);
-    }
+	public override void Draw(RenderTarget target)
+	{
+		if (IsActive)
+		{
+			if (IsMouseOver())
+			{
+				BgColor = (Color) Colors.LightBlue;
+			}
+			else
+			{
+				BgColor = (Color) Colors.Blue;
+			}
+		}
+		base.Draw(target);
+	}
 }
