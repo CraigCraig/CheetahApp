@@ -17,7 +17,13 @@
 		<DefineConstants>LINUX</DefineConstants>
 	</PropertyGroup>
 
-	<ItemGroup>
+  <ItemGroup>
+    <Compile Remove="CheetahUtils\**" />
+    <EmbeddedResource Remove="CheetahUtils\**" />
+    <None Remove="CheetahUtils\**" />
+  </ItemGroup>
+
+  <ItemGroup>
 	  <Compile Remove="Button.cs" />
 	  <Compile Remove="ColorExtensions.cs" />
 	  <Compile Remove="Element.cs" />
