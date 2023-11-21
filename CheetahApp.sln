@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34310.174
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheetahApp", "CheetahApp.csproj", "{248DD377-57A6-4DDA-8185-DE3CB8A192D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheetahUtils", "CheetahUtils\CheetahUtils.csproj", "{C70F7557-A3EC-455B-907A-1E88A9E6441F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{B7464645-2C44-477E-B683-7DADD7E80900}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Linux = Debug|Linux
+		Debug|Windows = Debug|Windows
+		Release|Linux = Release|Linux
+		Release|Windows = Release|Windows
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{248DD377-57A6-4DDA-8185-DE3CB8A192D9}.Debug|Linux.ActiveCfg = Debug|Linux
+		{248DD377-57A6-4DDA-8185-DE3CB8A192D9}.Debug|Linux.Build.0 = Debug|Linux
+		{248DD377-57A6-4DDA-8185-DE3CB8A192D9}.Debug|Windows.ActiveCfg = Debug|Windows
+		{248DD377-57A6-4DDA-8185-DE3CB8A192D9}.Debug|Windows.Build.0 = Debug|Windows
+		{248DD377-57A6-4DDA-8185-DE3CB8A192D9}.Release|Linux.ActiveCfg = Release|Linux
+		{248DD377-57A6-4DDA-8185-DE3CB8A192D9}.Release|Linux.Build.0 = Release|Linux
+		{248DD377-57A6-4DDA-8185-DE3CB8A192D9}.Release|Windows.ActiveCfg = Release|Windows
+		{248DD377-57A6-4DDA-8185-DE3CB8A192D9}.Release|Windows.Build.0 = Release|Windows
+		{C70F7557-A3EC-455B-907A-1E88A9E6441F}.Debug|Linux.ActiveCfg = Debug|Linux
+		{C70F7557-A3EC-455B-907A-1E88A9E6441F}.Debug|Linux.Build.0 = Debug|Linux
+		{C70F7557-A3EC-455B-907A-1E88A9E6441F}.Debug|Windows.ActiveCfg = Debug|Windows
+		{C70F7557-A3EC-455B-907A-1E88A9E6441F}.Debug|Windows.Build.0 = Debug|Windows
+		{C70F7557-A3EC-455B-907A-1E88A9E6441F}.Release|Linux.ActiveCfg = Release|Linux
+		{C70F7557-A3EC-455B-907A-1E88A9E6441F}.Release|Linux.Build.0 = Release|Linux
+		{C70F7557-A3EC-455B-907A-1E88A9E6441F}.Release|Windows.ActiveCfg = Release|Windows
+		{C70F7557-A3EC-455B-907A-1E88A9E6441F}.Release|Windows.Build.0 = Release|Windows
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C70F7557-A3EC-455B-907A-1E88A9E6441F} = {B7464645-2C44-477E-B683-7DADD7E80900}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {84E210E6-830D-4010-9F5C-65045445DB9E}
+	EndGlobalSection
+EndGlobal

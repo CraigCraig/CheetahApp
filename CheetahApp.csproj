@@ -39,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CheeseyUtils\CheetahUtils.csproj" />
+    <ProjectReference Include="CheetahUtils\CheetahUtils.csproj" />
   </ItemGroup>
 
 </Project>
