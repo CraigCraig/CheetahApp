@@ -1,22 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	<TargetFramework>net8.0</TargetFramework>
-	<Nullable>enable</Nullable>
-	<LangVersion>preview</LangVersion>
-	<Platforms>Windows;Linux</Platforms>
-	<Configurations>Debug;Release</Configurations>
-	<AssemblyVersion>1.0.0</AssemblyVersion>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>preview</LangVersion>
+    <Platforms>Windows;Linux</Platforms>
+    <Configurations>Debug;Release</Configurations>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
   </PropertyGroup>
-	
-	<PropertyGroup Condition="'$(OS)' == 'Windows_NT' ">
-		<DefineConstants>WINDOWS</DefineConstants>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(OS)' == 'Linux' ">
-		<DefineConstants>LINUX</DefineConstants>
-	</PropertyGroup>
-
+  
   <ItemGroup>
     <Compile Remove="CheetahUtils\**" />
     <EmbeddedResource Remove="CheetahUtils\**" />
@@ -33,7 +25,7 @@
 	  <Compile Remove="RootElement.cs" />
 	  <Compile Remove="Test.cs" />
 	</ItemGroup>
-	
+
   <ItemGroup>
     <None Remove=".git" />
     <None Remove=".gitignore" />
@@ -46,6 +38,11 @@
 
   <ItemGroup>
     <ProjectReference Include="CheetahUtils\CheetahUtils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Registry\" />
+    <Folder Include="Commands\" />
   </ItemGroup>
 
 </Project>
