@@ -37,7 +37,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="CheetahUtils\CheetahUtils.csproj" />
+    <ProjectReference Include="..\CheetahUtils\CheetahUtils.csproj" />
+	  
   </ItemGroup>
 
   <ItemGroup>
