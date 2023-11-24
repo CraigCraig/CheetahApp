@@ -8,13 +8,15 @@
     <Configurations>Debug;Release</Configurations>
     <AssemblyVersion>1.0.0</AssemblyVersion>
   </PropertyGroup>
-  
-  <ItemGroup>
-    <Compile Remove="CheetahUtils\**" />
-    <EmbeddedResource Remove="CheetahUtils\**" />
-    <None Remove="CheetahUtils\**" />
-  </ItemGroup>
+	
+	<PropertyGroup Condition="'$(OS)' == 'Windows_NT' ">
+		<DefineConstants>WINDOWS</DefineConstants>
+	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(OS)' == 'Linux' ">
+		<DefineConstants>LINUX</DefineConstants>
+	</PropertyGroup>
+	
   <ItemGroup>
 	  <Compile Remove="Button.cs" />
 	  <Compile Remove="ColorExtensions.cs" />
@@ -42,7 +44,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Registry\" />
     <Folder Include="Commands\" />
   </ItemGroup>
 
