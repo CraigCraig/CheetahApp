@@ -1,62 +1,7 @@
 ﻿namespace CheetahApp;
 
-using CheetahApp.Commands;
-using CheetahApp.Modules;
-using CheetahApp.Plugins;
-using System;
-
-/// <summary>
-/// Base class for all Applications.
-/// <para>See also <seealso cref="ConsoleApp"/> and <seealso cref="WindowApp" /></para>
-/// </summary>
-public class App
+public struct CommandContext
 {
-	public AppInfo Info { get; }
-	public AppSettings Settings { get; }
-
-	private CommandHandler _commandHandler;
-	private ModuleHandler _moduleHandler;
-	private PluginHandler _pluginHandler;
-
-	public App(AppInfo info, AppSettings settings)
-	{
-        Console.WriteLine("CheetahTerminal: v1.0.0-nightly");
-
-		_commandHandler = new();
-		_moduleHandler = new();
-		_pluginHandler = new();
-	}
-
-	public virtual void Start()
-	{
-
-        PrintPrompt();
-        while (true)
-        {
-            var input = Console.ReadLine();
-            if (!string.IsNullOrEmpty(input))
-            {
-				string command = input.Split(' ')[0];
-				string[] arguments = input.Split(' ')[1..];
-				_commandHandler.HandleCommand(command, arguments);
-            }
-			PrintPrompt();
-        }
-
-        void PrintPrompt() => Console.Write("nightly@CTerm -> "); // TODO: Make a better prompt
-    }
-
-	public virtual void Update()
-	{
-	}
-
-	public virtual void Command(CommandContext context)
-	{
-	}
-
-	public virtual void Close()
-	{
-	}
 }
 
 //public class App

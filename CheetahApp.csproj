@@ -3,17 +3,18 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <LangVersion>preview</LangVersion>
+    <LangVersion>latest</LangVersion>
     <Platforms>Windows;Linux</Platforms>
     <Configurations>Debug;Release</Configurations>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <AssemblyVersion>1.0.0</AssemblyVersion>
   </PropertyGroup>
 	
-	<PropertyGroup Condition="'$(OS)' == 'Windows_NT' ">
+	<PropertyGroup Condition="'$(Platform)' == 'Windows' ">
 		<DefineConstants>WINDOWS</DefineConstants>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(OS)' == 'Linux' ">
+	<PropertyGroup Condition="'$(Platform)' == 'Linux' ">
 		<DefineConstants>LINUX</DefineConstants>
 	</PropertyGroup>
 	
@@ -35,16 +36,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="SFML.Net" Version="2.5.1" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CheetahUtils\CheetahUtils.csproj" />
-	  
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Commands\" />
   </ItemGroup>
 
 </Project>
