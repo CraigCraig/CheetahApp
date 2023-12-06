@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <Platforms>Windows;Linux</Platforms>
+    <Configurations>Debug;Release</Configurations>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+  </PropertyGroup>
+	
+	<PropertyGroup Condition="'$(Platform)' == 'Windows' ">
+		<DefineConstants>WINDOWS</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Platform)' == 'Linux' ">
+		<DefineConstants>LINUX</DefineConstants>
+	</PropertyGroup>
+	
+  <ItemGroup>
+	  <Compile Remove="Button.cs" />
+	  <Compile Remove="ColorExtensions.cs" />
+	  <Compile Remove="Element.cs" />
+	  <Compile Remove="Fonts.cs" />
+	  <Compile Remove="Input.cs" />
+	  <Compile Remove="Label.cs" />
+	  <Compile Remove="RootElement.cs" />
+	  <Compile Remove="Test.cs" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <None Remove=".git" />
+    <None Remove=".gitignore" />
+    <None Remove="LICENSE" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CheetahUtils\CheetahUtils.csproj" />
+  </ItemGroup>
+
+</Project>
